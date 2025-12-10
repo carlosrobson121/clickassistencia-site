@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ClickCell - Assistência técnica especializada em iPhone e celulares em Uberlândia. Troca de vidro, troca de tela, bateria, conserto de placa e falha de carga. Atendimento rápido no Bairro Brasil, Av. Floriano Peixoto 2673.">
+    <title>ClickCell Uberlândia - Assistência Técnica de iPhone e Celulares | Troca de Vidro, Tela e Bateria</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clickcell: {
+                            dark: '#062742',
+                            darker: '#041629',
+                            orange: '#F97316',
+                            light: '#F4F8FB'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-curve {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .hero-curve svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 60px;
+        }
+    </style>
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ClickCell Uberlândia",
+      "image": "assets/images/hero-phone.png",
+      "telephone": "+5534997826161",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Floriano Peixoto, 2673",
+        "addressLocality": "Uberlândia",
+        "addressRegion": "MG",
+        "postalCode": "38400-702",
+        "addressCountry": "BR"
+      },
+      "url": "https://clickcell.com.br",
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Preciso agendar horário?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não é obrigatório, você pode vir direto à loja. Porém, agendar pelo WhatsApp garante prioridade no atendimento e peças reservadas para você."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo demora o conserto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Na maioria dos casos, seu aparelho fica pronto no mesmo dia. Se você fizer o agendamento prévio, serviços como troca de tela e bateria podem ser concluídos em aproximadamente 1 hora. Reparos em placa levam de 24 a 72 horas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Perco meus dados no conserto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Em 99% dos casos, como troca de tela e bateria, seus dados permanecem intactos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a garantia do serviço?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oferecemos 3 a 6 meses de garantia dependendo do serviço e da peça escolhida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês atendem apenas iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não! Somos especializados em Apple, mas atendemos Samsung, Motorola, Xiaomi e outras marcas principais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quais as formas de pagamento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aceitamos dinheiro, PIX, e cartões de crédito e débito."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa para trocar a tela do iPhone 11 em Uberlândia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O valor varia de acordo com a qualidade da peça. Chame no WhatsApp para consultar o valor atualizado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Onde consertar iPhone em Uberlândia com garantia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A ClickCell oferece garantia em todos os serviços. Estamos na Av. Floriano Peixoto, 2673, Bairro Brasil, Uberlândia."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-slate-800">
+
+    <!-- Navbar -->
+    <nav class="bg-clickcell-dark text-white py-4 fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold tracking-tight">
+                Click<span class="text-clickcell-orange">Cell</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
+                <a href="#inicio" class="hover:text-white transition">Início</a>
+                <a href="#servicos" class="hover:text-white transition">Serviços</a>
+                <a href="#sobre" class="hover:text-white transition">Sobre</a>
+                <a href="#duvidas" class="hover:text-white transition">Dúvidas</a>
+                <a href="#contato" class="hover:text-white transition">Contato</a>
+            </div>
+
+            <!-- CTA -->
+            <a href="https://wa.me/553497826161" target="_blank"
+                class="hidden md:inline-flex items-center gap-2 bg-clickcell-orange text-clickcell-darker px-5 py-2.5 rounded-full font-bold text-sm hover:bg-orange-400 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                <i class="fab fa-whatsapp text-lg"></i>
+                Falar no WhatsApp
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HERO -->
+    <section id="inicio"
+        class="relative bg-gradient-to-br from-clickcell-darker to-clickcell-dark pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Background Elements -->
+        <div
+            class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]">
+        </div>
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-black/20 to-transparent"></div>
+
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="space-y-6 md:pr-10">
+                    <div
+                        class="inline-block bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
+                        <span class="text-clickcell-orange text-xs font-bold uppercase tracking-wider">Assistência
+                            técnica em Uberlândia-MG</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        Consertamos seu <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-clickcell-orange to-white">iPhone,
+                            celular ou tablet</span>
+                        <br>com rapidez e segurança em Uberlândia
+                    </h1>
+
+                    <p class="text-gray-400 text-lg leading-relaxed max-w-lg">
+                        Especialistas em iPhone e nas principais marcas do mercado (Samsung, Xiaomi e Motorola). Fazemos
+                        troca de vidro, tela, bateria e reparos avançados em placa aqui em Uberlândia, com transparência
+                        total, garantia e seus dados 100% seguros.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="https://wa.me/553497826161" target="_blank"
+                            class="inline-flex justify-center items-center gap-2 bg-clickcell-orange text-clickcell-darker px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-400 transition shadow-[0_0_20px_rgba(24,211,122,0.3)] hover:shadow-[0_0_30px_rgba(24,211,122,0.5)] transform hover:-translate-y-1">
+                            <i class="fab fa-whatsapp"></i> Agendar Conserto
+                        </a>
+                        <a href="#servicos"
+                            class="inline-flex justify-center items-center gap-2 border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition">
+                            Ver Serviços
+                        </a>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="pt-8 border-t border-white/10 mt-8">
+                        <p class="text-gray-500 text-sm mb-3">Atendemos as principais marcas:</p>
+                        <div class="flex gap-6 text-gray-400 text-2xl">
+                            <i class="fab fa-apple hover:text-white transition duration-300"></i>
+                            <i class="fab fa-android hover:text-white transition duration-300"></i>
+                            <!-- Generic for Androids/Samsung/Moto/Xiaomi if icons missing -->
+                            <i class="fab fa-google hover:text-white transition duration-300"></i>
+                            <span
+                                class="text-base font-bold self-center hover:text-white transition duration-300">XIAOMI</span>
+                            <span
+                                class="text-base font-bold self-center hover:text-white transition duration-300">MOTOROLA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content (Image) -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-clickcell-orange blur-[100px] opacity-20 rounded-full"></div>
+                    <img src="assets/images/hero-phone.png" alt="Troca de vidro de iPhone em Uberlândia na ClickCell"
+                        class="relative w-full max-w-none mx-auto drop-shadow-2xl transform md:rotate-[-5deg] hover:rotate-0 transition duration-500">
+                </div>
+            </div>
+        </div>
+
+        <!-- Curve Separator -->
+        <div class="hero-curve">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    fill="#F4F8FB"></path>
+            </svg>
+        </div>
+    </section>
+
+
+    <!-- SECTION 2: SERVICE CATEGORIES -->
+    <section id="servicos" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-clickcell-orange font-bold uppercase tracking-wider text-sm">Nossos Serviços</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-clickcell-darker mt-2 mb-4">Escolha o tipo de reparo que
+                    você precisa</h2>
+                <p class="text-gray-500">Trabalhamos com equipamentos de última geração para garantir que seu aparelho
+                    volte a funcionar como novo.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="group bg-white border border-gray-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-clickcell-darker mb-2">Reparos em iPhone</h3>
+                    <p class="text-gray-500 text-sm mb-6">Especialistas em toda a linha Apple em Uberlândia. Troca de
+                        vidro, tela, bateria e ajustes em Face ID com peças de qualidade.</p>
+                    <a href="https://wa.me/553497826161"
+                        class="text-clickcell-orange font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Ver
+                        detalhes <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group bg-white border border-gray-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-clickcell-darker mb-2">Outras Marcas</h3>
+                    <p class="text-gray-500 text-sm mb-6">Samsung, Xiaomi, Motorola e mais. Peças originais e
+                        compatíveis.</p>
+                    <a href="https://wa.me/553497826161"
+                        class="text-clickcell-orange font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Ver
+                        detalhes <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group bg-white border border-gray-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-14 h-14 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-600 group-hover:text-white transition">
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-clickcell-darker mb-2">Troca de Bateria</h3>
+                    <p class="text-gray-500 text-sm mb-6">Seu celular descarrega rápido? Trocamos sua bateria em
+                        minutos.</p>
+                    <a href="https://wa.me/553497826161"
+                        class="text-clickcell-orange font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Ver
+                        detalhes <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="group bg-white border border-gray-100 p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300">
+                    <div
+                        class="w-14 h-14 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-clickcell-darker mb-2">Acessórios e Ajustes</h3>
+                    <p class="text-gray-500 text-sm mb-6">Películas, capas e reparos em botões, câmeras e conectores.
+                    </p>
+                    <a href="https://wa.me/553497826161"
+                        class="text-clickcell-orange font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Ver
+                        detalhes <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: COMMON PROBLEMS -->
+    <section class="py-20 md:py-28 bg-clickcell-light relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 left-0 w-full h-20 bg-white" style="clip-path: ellipse(60% 100% at 50% 0%);"></div>
+
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-clickcell-darker mb-4">Conserto de celular sem dor de
+                    cabeça</h2>
+                <p class="text-gray-500">Identificou algum desses problemas? Fale com a gente agora mesmo.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Problem 1 -->
+                <div class="flex gap-4 items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-clickcell-dark text-xl shrink-0">
+                        <i class="fas fa-power-off"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-clickcell-darker mb-1">Aparelho não liga</h4>
+                        <p class="text-sm text-gray-500">Diagnóstico avançado de placa para recuperar seu aparelho.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 2 -->
+                <div class="flex gap-4 items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-red-500 text-xl shrink-0">
+                        <i class="fas fa-heart-broken"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-clickcell-darker mb-1">Danos por queda</h4>
+                        <p class="text-sm text-gray-500">Recuperação de carcaça e componentes internos danificados.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 3 -->
+                <div class="flex gap-4 items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-orange-500 text-xl shrink-0">
+                        <i class="fas fa-battery-empty"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-clickcell-darker mb-1">Bateria viciada</h4>
+                        <p class="text-sm text-gray-500">Troca rápida para você não ficar preso à tomada.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 4 -->
+                <div class="flex gap-4 items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-xl shrink-0">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-clickcell-darker mb-1">Problemas de Sinal/Wi-Fi</h4>
+                        <p class="text-sm text-gray-500">Reparo em antenas e circuitos de conectividade.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 5 -->
+                <div class="flex gap-4 items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center text-yellow-600 text-xl shrink-0">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-clickcell-darker mb-1">Conector ruim</h4>
+                        <p class="text-sm text-gray-500">Seu celular não carrega ou tem mau contato? Nós resolvemos.</p>
+                    </div>
+                </div>
+
+                <!-- Problem 6 -->
+                <div class="flex gap-4 items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                    <div
+                        class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-purple-500 text-xl shrink-0">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-clickcell-darker mb-1">Tela trincada</h4>
+                        <p class="text-sm text-gray-500">Troca de vidro ou display completo com qualidade premium.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: TRUST / TECHNICIAN -->
+    <section id="sobre" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="order-2 md:order-1 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-clickcell-orange/20 rounded-full blur-xl z-0">
+                    </div>
+                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+                        <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center text-gray-400">
+                            <img src="assets/images/technician.png"
+                                alt="Técnico da ClickCell consertando iPhone na bancada em Uberlândia"
+                                class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <!-- Stats Card Floating -->
+                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl z-20 hidden lg:block">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-xl">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold text-clickcell-darker">5.000+</p>
+                                <p class="text-xs text-gray-500 uppercase tracking-wide">Aparelhos Reparados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="order-1 md:order-2">
+                    <span class="text-clickcell-orange font-bold uppercase tracking-wider text-sm">Técnicos
+                        Profissionais</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-clickcell-darker mt-2 mb-6">Seu aparelho em boas mãos
+                    </h2>
+                    <p class="text-gray-500 text-lg mb-8 leading-relaxed">
+                        Na ClickCell, tratamos seu aparelho como se fosse nosso. Somos especializados em iPhone e nas
+                        principais marcas do mercado, utilizando ferramentas de precisão e peças de alta qualidade para
+                        garantir que o reparo seja definitivo aqui em Uberlândia.
+                    </p>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-700">
+                            <i class="fas fa-check-circle text-clickcell-orange text-xl"></i>
+                            <span>Orçamento transparente e sem surpresas</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700">
+                            <i class="fas fa-check-circle text-clickcell-orange text-xl"></i>
+                            <span>Peças de 1ª linha com garantia</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700">
+                            <i class="fas fa-check-circle text-clickcell-orange text-xl"></i>
+                            <span>Sigilo absoluto dos seus dados</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-700">
+                            <i class="fas fa-check-circle text-clickcell-orange text-xl"></i>
+                            <span>Atendimento rápido via WhatsApp</span>
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/553497826161"
+                        class="inline-flex justify-center items-center gap-2 bg-clickcell-darker text-white px-8 py-3 rounded-full font-bold hover:bg-clickcell-dark transition">
+                        Falar com um especialista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 5: TESTIMONIALS -->
+    <section class="py-20 md:py-28 bg-clickcell-light">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-clickcell-orange font-bold uppercase tracking-wider text-sm">Depoimentos</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-clickcell-darker mt-2">O que nossos clientes dizem</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-500 mb-6 italic">"Meu iPhone caiu e quebrou a tela toda. Achei que ia perder
+                        tudo, mas o pessoal da ClickCell foi incrível. Trocaram na hora e ficou perfeito!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">
+                            MJ</div>
+                        <div>
+                            <p class="font-bold text-clickcell-darker text-sm">Mariana Jesus</p>
+                            <p class="text-xs text-gray-400">Troca de Tela iPhone 11</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-500 mb-6 italic">"Melhor assistência de Uberlândia. Preço justo e muito
+                        transparentes sobre o problema. Recomendo demais!"</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">
+                            RA</div>
+                        <div>
+                            <p class="font-bold text-clickcell-darker text-sm">Ricardo Almeida</p>
+                            <p class="text-xs text-gray-400">Reparo em Placa Samsung</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm">
+                    <div class="flex text-yellow-400 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-500 mb-6 italic">"A bateria do meu Xiaomi não durava nada. Trocamos e agora está
+                        nova. Atendimento nota 10 pelo WhatsApp."</p>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">
+                            FS</div>
+                        <div>
+                            <p class="font-bold text-clickcell-darker text-sm">Fernanda Silva</p>
+                            <p class="text-xs text-gray-400">Troca de Bateria</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots Navigation Mockup -->
+            <div class="flex justify-center gap-2 mt-8">
+                <span class="w-3 h-3 bg-clickcell-orange rounded-full"></span>
+                <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
+                <span class="w-3 h-3 bg-gray-300 rounded-full"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: VIDEO HIGHLIGHT -->
+    <section class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="relative w-full h-96 md:h-[500px] rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                <!-- Background Image -->
+                <img src="assets/images/video-cover.png"
+                    alt="Laboratório da ClickCell em Uberlândia com bancada de eletrônica"
+                    class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+
+                <!-- Overlay -->
+                <div
+                    class="absolute inset-0 bg-clickcell-darker/60 flex flex-col items-center justify-center text-center p-6">
+                    <div
+                        class="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-6 ring-1 ring-white/50 group-hover:scale-110 transition duration-300">
+                        <div
+                            class="w-14 h-14 bg-clickcell-orange rounded-full flex items-center justify-center pl-1 shadow-lg">
+                            <i class="fas fa-play text-white text-2xl"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Veja como cuidamos do seu aparelho</h2>
+                    <p class="text-gray-300 text-lg max-w-xl">Tecnologia de ponta e laboratório especializado para
+                        garantir a máxima qualidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7: BLOG / TIPS -->
+    <section class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div class="max-w-2xl">
+                    <span class="text-clickcell-orange font-bold uppercase tracking-wider text-sm">Dicas &
+                        Novidades</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-clickcell-darker mt-2">Últimas novidades da ClickCell
+                    </h2>
+                </div>
+                <a href="#" class="text-clickcell-dark font-bold hover:text-clickcell-orange transition">Ver todos os
+                    artigos &rarr;</a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <div class="group cursor-pointer">
+                    <div class="rounded-2xl overflow-hidden mb-4 h-60 bg-gray-100 relative">
+                        <img src="assets/images/blog-water-damage.png"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                            alt="Celular que caiu na água sendo analisado na ClickCell em Uberlândia">
+                        <div
+                            class="absolute top-4 left-4 bg-clickcell-orange text-clickcell-darker text-xs font-bold px-3 py-1 rounded-full">
+                            Dicas</div>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-clickcell-darker mb-2 group-hover:text-clickcell-orange transition">
+                        O que fazer quando o celular cai na água?</h3>
+                    <p class="text-gray-500 text-sm line-clamp-2">Acidentes acontecem. Saiba os primeiros socorros para
+                        tentar salvar seu aparelho antes de trazer para nós.</p>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="group cursor-pointer">
+                    <div class="rounded-2xl overflow-hidden mb-4 h-60 bg-gray-100 relative">
+                        <img src="assets/images/blog-broken-screen.png"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                            alt="Tela de iPhone quebrada antes da troca de vidro na ClickCell Uberlândia">
+                        <div
+                            class="absolute top-4 left-4 bg-clickcell-darker text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Reparos</div>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-clickcell-darker mb-2 group-hover:text-clickcell-orange transition">
+                        Vale a pena trocar a tela ou o aparelho?</h3>
+                    <p class="text-gray-500 text-sm line-clamp-2">Entenda quando o conserto é vantajoso e quando é
+                        melhor investir em um novo smartphone.</p>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="group cursor-pointer">
+                    <div class="rounded-2xl overflow-hidden mb-4 h-60 bg-gray-100 relative">
+                        <img src="assets/images/blog-battery.png"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+                            alt="Troca de bateria de iPhone na ClickCell em Uberlândia">
+                        <div
+                            class="absolute top-4 left-4 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Bateria</div>
+                    </div>
+                    <h3
+                        class="text-xl font-bold text-clickcell-darker mb-2 group-hover:text-clickcell-orange transition">
+                        5 Dicas para a bateria durar mais</h3>
+                    <p class="text-gray-500 text-sm line-clamp-2">Pequenos hábitos que podem dobrar a vida útil da
+                        bateria do seu celular no dia a dia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION 8: FAQ -->
+    <section id="duvidas" class="py-20 md:py-28 bg-clickcell-light">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-16">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-clickcell-orange font-bold uppercase tracking-wider text-sm">Dúvidas
+                        Frequentes</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-clickcell-darker mt-2">Perguntas Frequentes</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-x-12 gap-y-6">
+                    <!-- Q1 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-clickcell-darker list-none">
+                            Preciso agendar horário?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-500 mt-4 text-sm leading-relaxed">Não é obrigatório, você pode vir direto à
+                            loja. Porém, agendar pelo WhatsApp garante prioridade no atendimento e peças reservadas para
+                            você.</p>
+                    </details>
+
+                    <!-- Q2 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-clickcell-darker list-none">
+                            Quanto tempo demora o conserto?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-500 mt-4 text-sm leading-relaxed">Na maioria dos casos, seu aparelho fica
+                            pronto no mesmo dia.<br><br>
+                            Se você fizer o agendamento prévio, serviços como troca de tela e bateria podem ser
+                            concluídos em aproximadamente 1 hora, mediante confirmação de disponibilidade no momento do
+                            agendamento.<br><br>
+                            Reparos em placa, por serem mais complexos, normalmente levam de 24 a 72 horas úteis.</p>
+                    </details>
+
+                    <!-- Q3 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-clickcell-darker list-none">
+                            Perco meus dados no conserto?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-500 mt-4 text-sm leading-relaxed">Em 99% dos casos, como troca de tela e
+                            bateria, seus dados permanecem intactos. Para reparos de software ou placa grave, avisaremos
+                            se houver risco.</p>
+                    </details>
+
+                    <!-- Q4 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-clickcell-darker list-none">
+                            Qual a garantia do serviço?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-500 mt-4 text-sm leading-relaxed">Oferecemos 3 a 6 meses de garantia
+                            dependendo do serviço e da peça escolhida. Cobrimos defeitos de fabricação da peça e do
+                            serviço.</p>
+                    </details>
+
+                    <!-- Q5 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-clickcell-darker list-none">
+                            Vocês atendem apenas iPhone?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-500 mt-4 text-sm leading-relaxed">Não! Somos especializados em Apple, mas
+                            atendemos Samsung, Motorola, Xiaomi e outras marcas principais do mercado.</p>
+                    </details>
+
+                    <!-- Q6 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-clickcell-darker list-none">
+                            Quais as formas de pagamento?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-500 mt-4 text-sm leading-relaxed">Aceitamos dinheiro, PIX, e cartões de
+                            crédito e débito. Parcelamos serviços de valor maior (consulte condições).</p>
+                    </details>
+                    <!-- Q7 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-clickcell-darker list-none">
+                            Quanto custa para trocar a tela do iPhone 11 em Uberlândia?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                            O valor pode variar de acordo com a qualidade da peça e a disponibilidade no momento.
+                            Trabalhamos sempre com peças de qualidade e informamos o preço exato antes de você autorizar
+                            o serviço. Chame a gente no WhatsApp para consultar o valor atualizado da troca de tela do
+                            iPhone 11 em Uberlândia.
+                        </p>
+                    </details>
+
+                    <!-- Q8 -->
+                    <details class="group bg-gray-50 rounded-xl p-6 cursor-pointer">
+                        <summary class="flex justify-between items-center font-bold text-clickcell-darker list-none">
+                            Onde consertar iPhone em Uberlândia com garantia?
+                            <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
+                        </summary>
+                        <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                            A ClickCell é especializada em iPhone e oferece garantia nos serviços realizados, como troca
+                            de vidro, tela, bateria e reparos em placa. Estamos na Av. Floriano Peixoto, 2673, Bairro
+                            Brasil, em Uberlândia. Entre em contato pelo WhatsApp para agendar um diagnóstico ou tirar
+                            suas dúvidas.
+                        </p>
+                    </details>
+                </div>
+
+                <div class="mt-12 text-center flex flex-col sm:flex-row justify-center gap-4">
+                    <button
+                        class="border border-gray-300 text-gray-600 px-6 py-3 rounded-full font-bold hover:bg-gray-50 transition">Ver
+                        todas as perguntas</button>
+                    <a href="https://wa.me/553497826161"
+                        class="bg-clickcell-orange text-clickcell-darker px-8 py-3 rounded-full font-bold hover:bg-orange-400 transition shadow-lg">Falar
+                        sobre meu aparelho</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 9: NEWSLETTER -->
+    <section class="py-20 bg-gradient-to-r from-clickcell-darker to-clickcell-dark text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-clickcell-orange blur-[150px] opacity-10"></div>
+        <div class="container mx-auto px-4 md:px-8 relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Receba dicas para cuidar melhor do seu celular</h2>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Inscreva-se para receber promoções exclusivas e dicas de
+                manutenção preventiva.</p>
+
+            <form class="flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Seu melhor e-mail"
+                    class="flex-1 bg-white/10 border border-white/20 rounded-full px-6 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-clickcell-orange">
+                <button type="submit"
+                    class="bg-clickcell-orange text-clickcell-darker font-bold px-8 py-3 rounded-full hover:bg-orange-400 transition">Quero
+                    receber</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SECTION 10: FOOTER -->
+    <footer id="contato" class="bg-clickcell-darker text-gray-400 py-16 border-t border-white/5">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Column 1: Brand -->
+                <div>
+                    <a href="#" class="text-2xl font-bold text-white tracking-tight mb-6 block">
+                        Click<span class="text-clickcell-orange">Cell</span>
+                    </a>
+                    <p class="text-sm leading-relaxed mb-6">Assistência técnica especializada em iPhone e celulares em
+                        Uberlândia. Troca de vidro, tela, bateria, conserto de placa e outros reparos com qualidade,
+                        rapidez e confiança.</p>
+                    <div class="flex gap-4">
+                        <a href="https://instagram.com/clickcelludi"
+                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-clickcell-orange hover:text-clickcell-darker transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/553497826161"
+                            class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-clickcell-orange hover:text-clickcell-darker transition"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Pages -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Navegação</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#inicio" class="hover:text-clickcell-orange transition">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-clickcell-orange transition">Serviços</a></li>
+                        <li><a href="#sobre" class="hover:text-clickcell-orange transition">Sobre a Empresa</a></li>
+                        <li><a href="#duvidas" class="hover:text-clickcell-orange transition">Dúvidas Frequentes</a>
+                        </li>
+                        <li><a href="#contato" class="hover:text-clickcell-orange transition">Contate-nos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Services -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Principais Reparos</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-clickcell-orange transition">Troca de Tela iPhone</a></li>
+                        <li><a href="#" class="hover:text-clickcell-orange transition">Troca de Bateria</a></li>
+                        <li><a href="#" class="hover:text-clickcell-orange transition">Reparo em Placa</a></li>
+                        <li><a href="#" class="hover:text-clickcell-orange transition">Banho Químico</a></li>
+                        <li><a href="#" class="hover:text-clickcell-orange transition">Conserto de Conector</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="text-white font-bold mb-6">Contato</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-clickcell-orange"></i>
+                            <address class="not-italic text-sm leading-relaxed">
+                                Av. Floriano Peixoto, 2673, Bairro Brasil<br>
+                                Uberlândia - MG, CEP 38400-702
+                            </address>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-clickcell-orange"></i>
+                            <span>(34) 99782-6161</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-clickcell-orange text-lg"></i>
+                            <span>(34) 9782-6161</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="far fa-clock mt-1 text-clickcell-orange"></i>
+                            <span>Seg - Sex: 09h às 18h<br>Sáb: 09h às 13h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2024 ClickCell. Todos os direitos reservados.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition">Política de Privacidade</a>
+                    <a href="#" class="hover:text-white transition">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/553497826161" target="_blank"
+        class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 hover:scale-110 transition duration-300 animate-bounce">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+
+</html>
