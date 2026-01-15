@@ -837,44 +837,36 @@
         </div>
     </footer>
 
-    <!-- Smart Exit Modal -->
-    <div id="exitModal" class="modal-overlay" aria-hidden="true">
-        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-            <button class="close-modal" aria-label="Fechar Modal">&times;</button>
+    <div id="exitModal" class="exit-modal-overlay">
+        <div class="exit-modal-card">
+            <button class="close-btn" onclick="closeModal('close_action')">&times;</button>
 
-            <div class="text-center">
-                <div
-                    class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-blue text-2xl">
-                    <i class="fas fa-comment-dots"></i>
+            <div class="modal-body">
+                <div class="modal-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
                 </div>
 
-                <h3 id="modalTitle" class="text-2xl font-bold text-brand-text mb-2">Antes de sair...</h3>
-                <p class="text-gray-600 mb-8 leading-relaxed">
-                    Me diga o modelo e a peça que você precisa. Eu te respondo com preço e disponibilidade em minutos.
-                    Tem um especialista pronto pra te atender.
-                </p>
+                <h2>Antes de sair...</h2>
+                <p>Me diga o modelo e a peça que você precisa. Eu te respondo com <strong>preço e disponibilidade em
+                        minutos</strong>.</p>
+                <p class="subtext">Tem um especialista pronto pra te atender agora.</p>
 
-                <div class="space-y-3">
-                    <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Quero+cotar+preço+de+uma+peça+com+instalação.+Meu+modelo+é%3A"
-                        target="_blank" class="btn-primary w-full justify-center" data-cta="true">
-                        <i class="fab fa-whatsapp"></i> Quero cotar agora
-                    </a>
+                <div class="trust-line">
+                    <i class="fa-solid fa-store"></i> Loja física em Uberlândia • <i
+                        class="fa-solid fa-file-contract"></i> Garantia por escrito
+                </div>
 
-                    <button
-                        class="close-modal-link text-gray-400 hover:text-brand-blue text-sm font-medium transition-colors w-full py-2">
-                        Continuar navegando
-                    </button>
+                <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Quero%20cotar%20%5BPE%C3%87A%20%2B%20instala%C3%A7%C3%A3o%5D.%20Meu%20modelo%20%C3%A9%3A%20____."
+                    target="_blank" class="modal-cta-primary" onclick="trackConversion()">
+                    Quero cotar agora
+                </a>
 
-                    <div class="pt-4 border-t border-gray-100 mt-6">
-                        <p class="text-xs text-gray-400 font-medium">
-                            <i class="fas fa-store mr-1"></i> Loja física em Uberlândia • Garantia por escrito
-                        </p>
-                    </div>
+                <button class="modal-cta-secondary" onclick="closeModal('continue')">
+                    Continuar navegando
+                </button>
 
-                    <!-- Leave Option (History Back) -->
-                    <button id="leaveAnyway" class="text-xs text-gray-300 hover:text-gray-500 mt-2 underline">
-                        Sair mesmo assim
-                    </button>
+                <div class="leave-option">
+                    <a href="javascript:history.back()" class="leave-link">Sair mesmo assim</a>
                 </div>
             </div>
         </div>
@@ -907,99 +899,214 @@
                 document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
             }
 
-            // ============================================
-            // 2. CTA Logic & Tracking
-            // ============================================
-            function trackConversion() {
-                try {
-                    sessionStorage.setItem('cta_clicked', '1');
-                    // Explicitly stop modal logic if conversion happens
-                } catch (e) { }
-            }
+        });
+    </script>
 
-            // Track all conversion links
-            document.querySelectorAll('a[href*="whatsapp"], a[href^="tel:"], a[href*="maps"], [data-cta="true"]').forEach(el => {
-                el.addEventListener('click', trackConversion);
+    <style>
+        .exit-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .exit-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .exit-modal-card {
+            background: #FFFFFF;
+            width: 90%;
+            max-width: 420px;
+            border-radius: 24px;
+            padding: 32px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: scale(0.95);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .exit-modal-overlay.active .exit-modal-card {
+            transform: scale(1);
+        }
+
+        .modal-icon {
+            font-size: 48px;
+            color: #25D366;
+            margin-bottom: 16px;
+        }
+
+        .modal-body h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            color: #1D1D1F;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .modal-body p {
+            font-family: 'Inter', sans-serif;
+            color: #424245;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+
+        .modal-body .subtext {
+            font-size: 0.9rem;
+            color: #86868B;
+            margin-bottom: 24px;
+        }
+
+        .trust-line {
+            font-size: 0.8rem;
+            color: #6e6e73;
+            background: #F5F5F7;
+            padding: 10px 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            display: inline-block;
+            font-weight: 500;
+        }
+
+        .modal-cta-primary {
+            display: block;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(37, 211, 102, 0.2);
+        }
+
+        .modal-cta-primary:hover {
+            transform: translateY(-2px);
+            background: #1ebc57;
+        }
+
+        .modal-cta-secondary {
+            background: transparent;
+            border: 1px solid #E5E5EA;
+            color: #1D1D1F;
+            padding: 14px;
+            width: 100%;
+            border-radius: 99px;
+            font-weight: 500;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 24px;
+            transition: background-color 0.2s;
+        }
+
+        .modal-cta-secondary:hover {
+            background-color: #F5F5F7;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #F5F5F7;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #86868B;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s;
+        }
+
+        .close-btn:hover {
+            background-color: #E5E5EA;
+            color: #1D1D1F;
+        }
+
+        .leave-option {
+            margin-top: 8px;
+        }
+
+        .leave-link {
+            color: #86868B;
+            font-size: 0.85rem;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        .leave-link:hover {
+            color: #1D1D1F;
+        }
+    </style>
+
+    <script>
+        // 1. TRACK CONVERSION (Don't show modal if user already clicked a CTA)
+        function trackConversion() {
+            sessionStorage.setItem('cta_clicked', '1');
+        }
+
+        // Attach tracking to existing WhatsApp buttons
+        document.addEventListener("DOMContentLoaded", function () {
+            const conversionLinks = document.querySelectorAll('a[href*="whatsapp"], a[href^="tel:"], a[href*="maps"]');
+            conversionLinks.forEach(link => {
+                link.addEventListener('click', trackConversion);
             });
+        });
 
-            // ============================================
-            // 3. Smart Exit Modal Logic
-            // ============================================
-            const modal = document.getElementById('exitModal');
-            let allowLeave = false;
+        // 2. MODAL LOGIC
+        const exitModal = document.getElementById('exitModal');
 
-            function showModal() {
-                // Gating checks
-                if (sessionStorage.getItem('exit_modal_shown')) return;
-                if (sessionStorage.getItem('cta_clicked')) return;
-
-                // Show modal
+        function showExitIntent() {
+            // Only show if not shown before AND user hasn't clicked a CTA
+            if (!sessionStorage.getItem('exit_modal_shown') && !sessionStorage.getItem('cta_clicked')) {
+                exitModal.classList.add('active');
                 sessionStorage.setItem('exit_modal_shown', '1');
-                modal.classList.add('active');
-                modal.setAttribute('aria-hidden', 'false');
             }
+        }
 
-            function closeModal() {
-                modal.classList.remove('active');
-                modal.setAttribute('aria-hidden', 'true');
+        function closeModal(reason) {
+            exitModal.classList.remove('active');
+        }
+
+        // Trigger: Desktop Mouse Leave
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0) showExitIntent();
+        });
+
+        // Trigger: Mobile Timer (20 seconds)
+        setTimeout(() => {
+            showExitIntent();
+        }, 20000);
+
+        // Close on Outside Click
+        exitModal.addEventListener('click', (e) => {
+            if (e.target === exitModal) closeModal('outside');
+        });
+
+        // Close on ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && exitModal.classList.contains('active')) {
+                closeModal('escape');
             }
-
-            // Triggers
-
-            // A. Desktop Exit Intent (Mouse leave top)
-            document.addEventListener('mouseleave', (e) => {
-                if (e.clientY <= 0) {
-                    // Simple timeout check to avoid immediate fire on load
-                    if (performance.now() > 5000) showModal();
-                }
-            });
-
-            // B. Back Button Intent (History API)
-            // Push a state to intercept back button
-            try {
-                // Only push state if we haven't already and no CTA clicked
-                if (!sessionStorage.getItem('cta_clicked')) {
-                    history.pushState({ modal: true }, null, window.location.href);
-                }
-
-                window.addEventListener('popstate', (e) => {
-                    if (allowLeave) return; // Let user go back if allowed
-
-                    if (!sessionStorage.getItem('exit_modal_shown') && !sessionStorage.getItem('cta_clicked')) {
-                        // Intercept!
-                        showModal();
-                        // Re-push state so user stays on page (visually)
-                        history.pushState({ modal: true }, null, window.location.href);
-                    } else {
-                        // If already shown or converted, let them leave
-                        allowLeave = true;
-                        history.back();
-                    }
-                });
-            } catch (e) { }
-
-            // Modal Controls
-            document.querySelector('.close-modal').addEventListener('click', closeModal);
-            document.querySelector('.close-modal-link').addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeModal();
-            });
-
-            document.getElementById('leaveAnyway').addEventListener('click', () => {
-                allowLeave = true;
-                history.back(); // Trigger actual back navigation
-                // Fallback if history is empty (e.g. direct land)
-                setTimeout(() => {
-                    window.location.href = "https://google.com"; // Or main site
-                }, 100);
-            });
-
-            // Re-arm history on BFCache restore (Safari)
-            window.addEventListener('pageshow', (event) => {
-                if (event.persisted && !sessionStorage.getItem('cta_clicked')) {
-                    history.pushState({ modal: true }, null, window.location.href);
-                }
-            });
         });
     </script>
 </body>
