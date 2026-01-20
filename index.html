@@ -168,7 +168,20 @@
         gtag('config', 'AW-11382610222');
     </script>
 
-
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-11382610222/AzBECMj-oMwZEK6y07Mq',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 </head>
 
 <body class="bg-gray-50 text-slate-800">
@@ -191,7 +204,7 @@
             </div>
 
             <!-- CTA -->
-            <a href="https://wa.me/553497826161" target="_blank"
+            <a href="https://wa.me/553497826161" target="_blank" onclick="return gtag_report_conversion(this.href);"
                 class="hidden md:inline-flex items-center gap-2 bg-clickcell-orange text-clickcell-darker px-5 py-2.5 rounded-full font-bold text-sm hover:bg-orange-400 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                 <i class="fab fa-whatsapp text-lg"></i>
                 Falar no WhatsApp
@@ -239,6 +252,7 @@
 
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <a href="https://wa.me/553497826161" target="_blank"
+                            onclick="return gtag_report_conversion(this.href);"
                             class="inline-flex justify-center items-center gap-2 bg-clickcell-orange text-clickcell-darker px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-400 transition shadow-[0_0_20px_rgba(24,211,122,0.3)] hover:shadow-[0_0_30px_rgba(24,211,122,0.5)] transform hover:-translate-y-1">
                             <i class="fab fa-whatsapp"></i> Agendar Conserto
                         </a>
@@ -914,26 +928,12 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/553497826161" target="_blank"
+    <a href="https://wa.me/553497826161" target="_blank" onclick="return gtag_report_conversion(this.href);"
         class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 hover:scale-110 transition duration-300 animate-bounce">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Procura todos os links que contém 'wa.me' ou 'api.whatsapp'
-            var links = document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp"], a[href*="whatsapp.com"]');
 
-            links.forEach(function (link) {
-                link.addEventListener('click', function () {
-                    // Dispara o evento para o Google
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-11382610222/AzBECMj-oMwZEK6y07Mq'
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>
