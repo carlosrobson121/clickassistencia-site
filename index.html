@@ -159,6 +159,29 @@
       ]
     }
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11382610222"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-11382610222');
+    </script>
+
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-11382610222/AzBECMj-oMwZEK6y07Mq',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 </head>
 
 <body class="bg-gray-50 text-slate-800">
@@ -904,7 +927,7 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/553497826161" target="_blank"
+    <a href="https://wa.me/553497826161" onclick="return gtag_report_conversion(this.href);" target="_blank"
         class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 hover:scale-110 transition duration-300 animate-bounce">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
