@@ -1316,8 +1316,8 @@
                 <p class="text-gray-500"><i class="fas fa-phone w-5 text-center"></i> (34) 99782-6161</p>
             </div>
             <div class="flex flex-col gap-3">
-                <a href="#" class="text-gray-500 hover:text-brand-blue transition-colors">Política de Privacidade</a>
-                <a href="#" class="text-gray-500 hover:text-brand-blue transition-colors">Termos de Uso</a>
+                <a href="javascript:void(0)" onclick="openLegalModal('privacy')" class="text-gray-500 hover:text-brand-blue transition-colors">Política de Privacidade</a>
+                <a href="javascript:void(0)" onclick="openLegalModal('terms')" class="text-gray-500 hover:text-brand-blue transition-colors">Termos de Uso</a>
             </div>
         </div>
 
@@ -1725,6 +1725,94 @@
             }, 4000);
         }
     })();
+    </script>
+    <!-- Legal Modals -->
+    <div id="legalModal" class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none flex">
+        <div class="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeLegalModal()" class="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-800 transition-colors">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="p-8 sm:p-12">
+                <div id="contentPrivacy" class="hidden">
+                    <h2 class="text-2xl font-black text-brand-text mb-6">Política de Privacidade</h2>
+                    <div class="space-y-4 text-gray-600 text-sm leading-relaxed">
+                        <p>A <strong>ClickCell</strong> valoriza e repeita a sua privacidade. Esta política descreve como tratamos as suas informações ao aceder a nossa página de orçamentos e serviços de hardware.</p>
+                        <h3 class="font-bold text-gray-800 mt-6 mb-2">1. Coleta e Uso de Dados</h3>
+                        <p>Nós recolhemos informações limitadas e estritamente necessárias apenas quando opta por entrar em contato connosco via WhatsApp. Os dados partilhados de forma consensual são utilizados exclusivamente para o envio de cotações para a reposição de componentes no nosso laboratório físico.</p>
+                        <h3 class="font-bold text-gray-800 mt-6 mb-2">2. Cookies e Rastreamento</h3>
+                        <p>Utilizamos cookies rigorosamente para fins métricos sobre interações e navegação na página principal (recorrendo a ferramentas padrão como Google Analytics e Google Ads). Estes identificadores são pseudonimizados e funcionam unicamente para otimizar a experiência da plataforma. Não partilhamos, divulgamos e não vendemos quaisquer dados a terceiros.</p>
+                        <h3 class="font-bold text-gray-800 mt-6 mb-2">3. Segurança</h3>
+                        <p>A segurança do seu diálogo de orçamento está salvaguardada no próprio ecossistema do WhatsApp (protegido por criptografia de ponta a ponta).</p>
+                    </div>
+                </div>
+
+                <div id="contentTerms" class="hidden">
+                    <h2 class="text-2xl font-black text-brand-text mb-6">Termos de Uso</h2>
+                    <div class="space-y-4 text-gray-600 text-sm leading-relaxed">
+                        <p>Ao aceder à página e aos canais virtuais da <strong>ClickCell</strong>, você concorda em cumprir com os termos descritos abaixo acerca da nossa prestação em serviços de laboratório físico e fornecimento de componentes móveis.</p>
+                        <h3 class="font-bold text-gray-800 mt-6 mb-2">1. Limitação na Natureza do Orçamento</h3>
+                        <p>A ClickCell atua de forma rigorosamente independente, disponibilizando peças com padrão de qualidade superior para reposição de hardware de smartphones. Todas as estimativas partilhadas na nossa página ou enviadas ativamente via WhatsApp possuem caráter de cotação direcional, sempre sujeitas a uma avaliação física fundamental do dispositivo nas instalações do nosso laboratório físico.</p>
+                        <h3 class="font-bold text-gray-800 mt-6 mb-2">2. Limitação de Responsabilidade Intelectual</h3>
+                        <p>As marcas comerciais citadas na plataforma possuem exclusivamente o propósito de orientar e garantir a indicação exata de compatibilidade material do hardware requisitado pelo cliente, o que é sustentado pelo Art. 132 da Lei de Propriedade Industrial (Lei nº 9.279/96). A ClickCell desvincula-se destas corporações em totalidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Modals Controller -->
+    <script>
+        function openLegalModal(type) {
+            const modal = document.getElementById('legalModal');
+            const privacy = document.getElementById('contentPrivacy');
+            const terms = document.getElementById('contentTerms');
+            
+            // Toggle Display
+            modal.classList.remove('hidden');
+            privacy.classList.add('hidden');
+            terms.classList.add('hidden');
+            
+            if (type === 'privacy') privacy.classList.remove('hidden');
+            if (type === 'terms') terms.classList.remove('hidden');
+            
+            // Animate In
+            setTimeout(() => {
+                modal.classList.remove('opacity-0', 'pointer-events-none');
+                modal.querySelector('.bg-white').classList.remove('scale-95');
+                modal.querySelector('.bg-white').classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeLegalModal() {
+            const modal = document.getElementById('legalModal');
+            
+            // Animate Out
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modal.querySelector('.bg-white').classList.remove('scale-100');
+            modal.querySelector('.bg-white').classList.add('scale-95');
+            
+            // Toggle Display after animation
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Close when clicking directly on the overlay background
+        document.getElementById('legalModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLegalModal();
+            }
+        });
+
+        // Add ESC listener to close modal safely
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('legalModal');
+                if (!modal.classList.contains('hidden')) {
+                    closeLegalModal();
+                }
+            }
+        });
     </script>
 </body>
 
