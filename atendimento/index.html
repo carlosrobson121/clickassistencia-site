@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
     <meta name="description"
         content="Peças de reposição premium com instalação inclusa em Uberlândia. Telas, baterias e vidros instalados na hora com garantia.">
     <title>ClickCell - Peças e Instalação em Uberlândia</title>
@@ -248,6 +249,7 @@
             background: linear-gradient(135deg, rgba(0, 113, 227, 0.3), transparent 60%);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             mask-composite: exclude;
             opacity: 0;
             transition: opacity 0.4s ease;
@@ -415,6 +417,365 @@
                 transform: none !important;
             }
         }
+
+        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           SOCIAL PROOF BADGES (Count-up)
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+        .social-proof-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin: 0 auto 48px;
+            max-width: 860px;
+        }
+
+        .proof-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            border: 1px solid rgba(0,113,227,0.12);
+            border-radius: 16px;
+            padding: 14px 22px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            flex: 1 1 220px;
+            min-width: 200px;
+            max-width: 280px;
+        }
+
+        .proof-badge-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0071E3, #00C7FF);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .proof-badge-icon.green {
+            background: linear-gradient(135deg, #25D366, #00C67F);
+        }
+
+        .proof-badge-icon.purple {
+            background: linear-gradient(135deg, #7C3AED, #A78BFA);
+        }
+
+        .proof-badge-text strong {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #1D1D1F;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .proof-badge-text span {
+            font-size: 0.75rem;
+            color: #86868B;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           HERO H1 Enhancement
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+        .hero-h1 {
+            font-size: clamp(2.4rem, 7vw, 5rem);
+            font-weight: 900;
+            line-height: 1.06;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #0A0A0A 0%, #1D1D1F 50%, #0071E3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           DIAGNOSTIC GRID CARDS
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+        .diag-card {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .diag-card:hover {
+            transform: scale(1.05) translateY(-4px);
+            box-shadow: 0 24px 48px -12px rgba(0,113,227,0.18);
+            border-color: rgba(0,113,227,0.25);
+        }
+
+        .diag-card:hover .diag-card-img {
+            transform: scale(1.04);
+        }
+
+        .diag-card-img-wrap {
+            height: 200px;
+            background: #F5F5F7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .diag-card-img {
+            height: 100%;
+            object-fit: contain;
+            padding: 16px;
+            transition: transform 0.5s cubic-bezier(0.19,1,0.22,1);
+        }
+
+        .diag-card-body {
+            padding: 20px 22px 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .diag-card-tag {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #0071E3;
+            background: rgba(0,113,227,0.08);
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 100px;
+            margin-bottom: 10px;
+        }
+
+        .diag-card h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #1D1D1F;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .diag-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px;
+            flex: 1;
+        }
+
+        .diag-card ul li {
+            font-size: 0.82rem;
+            color: #6e6e73;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 5px;
+        }
+
+        .diag-card ul li i {
+            color: #25D366;
+            font-size: 0.75rem;
+        }
+
+        .diag-cta-btn {
+            display: block;
+            text-align: center;
+            background: #0071E3;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 12px 16px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+            letter-spacing: -0.01em;
+        }
+
+        .diag-cta-btn:hover {
+            background: #0077ED;
+            transform: translateY(-1px);
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           BEFORE/AFTER IMAGE COMPARISON SLIDER
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+        .comparison-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: col-resize;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: none;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.18);
+            aspect-ratio: 4/3;
+            width: 100%;
+        }
+
+        .comparison-slider img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+
+        .comparison-slider .img-before {
+            z-index: 1;
+        }
+
+        .comparison-slider .img-after {
+            z-index: 2;
+            clip-path: inset(0 0 0 50%);
+            transition: clip-path 0.01s linear;
+        }
+
+        .comparison-handle {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: white;
+            z-index: 3;
+            cursor: col-resize;
+            box-shadow: 0 0 12px rgba(0,0,0,0.3);
+        }
+
+        .comparison-handle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .comparison-handle::after {
+            content: '◀ ▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 11px;
+            color: #0071E3;
+            font-weight: 900;
+            letter-spacing: -1px;
+            pointer-events: none;
+        }
+
+        .comparison-label {
+            position: absolute;
+            bottom: 14px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 100px;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .label-before {
+            left: 14px;
+            background: rgba(0,0,0,0.65);
+            color: #FF453A;
+        }
+
+        .label-after {
+            right: 14px;
+            background: rgba(0,0,0,0.65);
+            color: #30D158;
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           ADDRESS HIGHLIGHT
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+        .address-highlight {
+            background: linear-gradient(135deg, #F0F6FF, #E8F0FE);
+            border: 1px solid rgba(0,113,227,0.15);
+            border-radius: 20px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+        }
+
+        .address-highlight address {
+            font-style: normal;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #1D1D1F;
+            letter-spacing: -0.02em;
+            line-height: 1.4;
+        }
+
+        .address-highlight .addr-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #0071E3;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           FAB WHATSAPP BUTTON
+        ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 28px;
+            right: 24px;
+            z-index: 999;
+            width: 62px;
+            height: 62px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(37,211,102,0.45);
+            text-decoration: none;
+            color: white;
+            font-size: 28px;
+            transition: transform 0.3s var(--ease-out-back), box-shadow 0.3s ease;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.12);
+            box-shadow: 0 12px 32px rgba(37,211,102,0.55);
+        }
+
+        @keyframes fabBounce {
+            0%, 85%, 100% { transform: translateY(0); }
+            90% { transform: translateY(-10px); }
+            95% { transform: translateY(-4px); }
+        }
+
+        .fab-whatsapp.bouncing {
+            animation: fabBounce 0.6s ease;
+        }
     </style>
 </head>
 
@@ -449,8 +810,8 @@
             </div>
 
             <!-- Headline -->
-            <h1 class="reveal text-4xl md:text-6xl font-bold leading-tight mb-6 text-brand-text tracking-tight">
-                Peças Premium com <br class="hidden md:block"> Instalação Inclusa.
+            <h1 class="reveal hero-h1">
+                Peças Premium com<br> Instalação Inclusa.
             </h1>
             <p class="reveal text-lg md:text-xl text-brand-gray max-w-2xl mx-auto mb-10 leading-relaxed font-light">
                 Recupere a originalidade do seu aparelho. Vidros, telas e baterias instalados na hora em laboratório
@@ -458,7 +819,7 @@
             </p>
 
             <!-- Main CTAs -->
-            <div class="reveal flex flex-col sm:flex-row justify-center gap-4 mb-16">
+            <div class="reveal flex flex-col sm:flex-row justify-center gap-4 mb-10">
                 <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Olá%2C+gostaria+de+saber+preço+e+disponibilidade+de+peças."
                     class="btn-primary group" target="_blank" data-cta="true">
                     <i class="fab fa-whatsapp text-lg"></i> Verificar Preço e Estoque
@@ -466,42 +827,34 @@
                 <a href="#como-funciona" class="btn-outline" data-cta="true">Como funciona</a>
             </div>
 
-            <!-- Quick Part Selector -->
-            <div
-                class="reveal bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg shadow-gray-200/50 border border-white max-w-3xl mx-auto mb-16 transform transition hover:scale-[1.01]">
-                <p class="text-sm text-gray-400 font-semibold mb-4 uppercase tracking-wider text-center">Selecione a
-                    peça que você precisa:</p>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Olá%2C+preciso+de+preço+para+o+Vidro+Frontal+(Peça+%2B+Instalação).+Meu+modelo+é%3A"
-                        target="_blank" class="part-btn group" data-cta="true">
-                        <i class="fas fa-layer-group text-blue-500 group-hover:scale-110 transition-transform"></i>
-                        Vidro Frontal
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Olá%2C+preciso+de+preço+para+a+Tela+Display+(Peça+%2B+Instalação).+Meu+modelo+é%3A"
-                        target="_blank" class="part-btn group" data-cta="true">
-                        <i class="fas fa-mobile text-purple-500 group-hover:scale-110 transition-transform"></i> Tela
-                        Display
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Olá%2C+preciso+de+preço+para+a+Bateria+(Peça+%2B+Instalação).+Meu+modelo+é%3A"
-                        target="_blank" class="part-btn group" data-cta="true">
-                        <i class="fas fa-battery-full text-green-500 group-hover:scale-110 transition-transform"></i>
-                        Bateria
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Olá%2C+preciso+de+preço+para+o+Conector+de+Carga+(Peça+%2B+Instalação).+Meu+modelo+é%3A"
-                        target="_blank" class="part-btn group" data-cta="true">
-                        <i class="fas fa-plug text-orange-500 group-hover:scale-110 transition-transform"></i> Conector
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Olá%2C+preciso+de+preço+para+o+Vidro+Traseiro+(Peça+%2B+Instalação).+Meu+modelo+é%3A"
-                        target="_blank" class="part-btn group" data-cta="true">
-                        <i class="fas fa-bullseye text-red-500 group-hover:scale-110 transition-transform"></i> Vidro
-                        Traseiro
-                    </a>
+            <!-- Social Proof Badges (Count-up) -->
+            <div class="reveal social-proof-bar mt-8 mb-10">
+                <div class="proof-badge">
+                    <div class="proof-badge-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <div class="proof-badge-text">
+                        <strong><span class="count-up" data-target="8400" data-suffix="+">0</span> Aparelhos</strong>
+                        <span>Reposição Concluída</span>
+                    </div>
+                </div>
+                <div class="proof-badge">
+                    <div class="proof-badge-icon green"><i class="fas fa-flask"></i></div>
+                    <div class="proof-badge-text">
+                        <strong><span class="count-up" data-target="10" data-suffix=" Anos">0</span></strong>
+                        <span>Laboratório Físico</span>
+                    </div>
+                </div>
+                <div class="proof-badge">
+                    <div class="proof-badge-icon purple"><i class="fas fa-file-signature"></i></div>
+                    <div class="proof-badge-text">
+                        <strong>Garantia Documentada</strong>
+                        <span>Por Escrito na Retirada</span>
+                    </div>
                 </div>
             </div>
 
-            <!-- Hero Image (Parallax) -->
-            <div class="hero-media-container reveal mt-8 max-w-2xl mx-auto">
-                <img src="../assets/images/hero_parts_installation_1768420478373.webp" alt="Peças de Smartphone Premium"
+            <!-- Hero Image -->
+            <div class="hero-media-container reveal mt-2 max-w-2xl mx-auto">
+                <img src="../assets/images/hero_parts_installation_1768420478373.webp" alt="Hardware Premium para Smartphones"
                     width="3120" height="1407" class="hero-media w-full h-auto rounded-3xl shadow-2xl"
                     style="transform: none !important;">
             </div>
@@ -511,87 +864,95 @@
     <!-- Best Seller Cards (Products) -->
     <section class="py-24 px-6 bg-white relative">
         <div class="max-w-6xl mx-auto">
-            <h2 class="reveal text-3xl font-bold mb-16 text-center text-brand-text">Peças Disponíveis p/ Instalação</h2>
+            <h2 class="reveal text-3xl font-bold mb-5 text-center text-brand-text">Grade de Diagnóstico</h2>
+            <p class="reveal text-center text-gray-400 text-sm mb-12 max-w-xl mx-auto">Selecione o componente que seu aparelho precisa. Cada card leva direto ao WhatsApp com a peça pré-especificada.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1 -->
-                <div class="reveal card-product bg-gray-50 rounded-2xl group cursor-pointer h-full flex flex-col">
-                    <div class="h-56 bg-white flex items-center justify-center p-6 border-b border-gray-50">
-                        <img src="../assets/images/card_front_glass_part_1768420492420.webp" width="1024" height="1024"
-                            class="h-full object-contain">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Diag Card 1: Vidro Frontal -->
+                <div class="reveal diag-card">
+                    <div class="diag-card-img-wrap">
+                        <img src="../assets/images/card_front_glass_part_1768420492420.webp"
+                            class="diag-card-img" width="1024" height="1024" alt="Substituição de Vidro Frontal">
                     </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="font-bold text-lg mb-2 text-brand-text">Vidro Frontal (Peça) <br>+ Instalação</h3>
-                        <ul class="text-sm text-gray-500 mb-6 space-y-2 flex-1">
-                            <li><i class="fas fa-check-circle text-brand-green mr-2"></i> Mantém display fábrica</li>
-                            <li><i class="fas fa-check-circle text-brand-green mr-2"></i> Acabamento industrial</li>
+                    <div class="diag-card-body">
+                        <span class="diag-card-tag">Componente Frontal</span>
+                        <h3>Vidro Frontal<br>+ Instalação</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Mantém display de fábrica</li>
+                            <li><i class="fas fa-check-circle"></i> Acabamento industrial</li>
+                            <li><i class="fas fa-check-circle"></i> Peça de Reposição nova</li>
                         </ul>
-                        <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Cotar+preço+do+Vidro+Frontal"
-                            target="_blank"
-                            class="block w-full text-center bg-white border border-gray-200 py-3 rounded-xl font-semibold text-sm hover:border-brand-blue hover:text-brand-blue transition text-gray-700"
-                            data-cta="true">Cotar Vidro</a>
+                        <a href="https://wa.me/5534997826161?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20a%20instala%C3%A7%C3%A3o%20de%20Vidro%20Frontal."
+                            target="_blank" class="diag-cta-btn" data-cta="true">
+                            <i class="fab fa-whatsapp mr-1"></i> Cotar Vidro Frontal
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="reveal card-product bg-gray-50 rounded-2xl group cursor-pointer h-full flex flex-col"
-                    style="transition-delay: 100ms;">
-                    <div class="h-56 bg-white flex items-center justify-center p-6 border-b border-gray-50">
-                        <img src="../assets/images/battery_replacement_clean_1768418253745.webp" width="1024"
-                            height="1024" class="h-full object-contain">
+                <!-- Diag Card 2: Bateria -->
+                <div class="reveal diag-card" style="transition-delay:80ms">
+                    <div class="diag-card-img-wrap">
+                        <img src="../assets/images/battery_replacement_clean_1768418253745.webp"
+                            class="diag-card-img" width="1024" height="1024" alt="Substituição de Bateria">
                     </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="font-bold text-lg mb-2 text-brand-text">Bateria (Peça) <br>+ Instalação</h3>
-                        <ul class="text-sm text-gray-500 mb-6 space-y-2 flex-1">
-                            <li><i class="fas fa-check-circle text-brand-green mr-2"></i> Alta performance</li>
-                            <li><i class="fas fa-check-circle text-brand-green mr-2"></i> Garantia de saúde 100%</li>
+                    <div class="diag-card-body">
+                        <span class="diag-card-tag">Hardware Premium</span>
+                        <h3>Bateria<br>+ Instalação</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Alta capacidade energética</li>
+                            <li><i class="fas fa-check-circle"></i> Saúde de bateria 100%</li>
+                            <li><i class="fas fa-check-circle"></i> Célula de Reposição certificada</li>
                         </ul>
-                        <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Cotar+preço+da+Bateria"
-                            target="_blank"
-                            class="block w-full text-center bg-white border border-gray-200 py-3 rounded-xl font-semibold text-sm hover:border-brand-blue hover:text-brand-blue transition text-gray-700"
-                            data-cta="true">Cotar Bateria</a>
+                        <a href="https://wa.me/5534997826161?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20a%20instala%C3%A7%C3%A3o%20de%20Bateria."
+                            target="_blank" class="diag-cta-btn" data-cta="true">
+                            <i class="fab fa-whatsapp mr-1"></i> Cotar Bateria
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="reveal card-product bg-gray-50 rounded-2xl group cursor-pointer h-full flex flex-col"
-                    style="transition-delay: 200ms;">
-                    <div class="h-56 bg-white flex items-center justify-center p-6 border-b border-gray-50">
-                        <img src="../assets/images/card_charging_port_part_1768420505038.webp" width="1024"
-                            height="1024" class="h-full object-contain">
+                <!-- Diag Card 3: Conector -->
+                <div class="reveal diag-card" style="transition-delay:160ms">
+                    <div class="diag-card-img-wrap">
+                        <img src="../assets/images/card_charging_port_part_1768420505038.webp"
+                            class="diag-card-img" width="1024" height="1024" alt="Substituição de Conector de Carga">
                     </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="font-bold text-lg mb-2 text-brand-text">Conector (Peça) <br>+ Instalação</h3>
-                        <ul class="text-sm text-gray-500 mb-6 space-y-2 flex-1">
-                            <li><i class="fas fa-check-circle text-brand-green mr-2"></i> Resolve falha de carga</li>
-                            <li><i class="fas fa-check-circle text-brand-green mr-2"></i> Peça de reposição nova</li>
+                    <div class="diag-card-body">
+                        <span class="diag-card-tag">Componente Interno</span>
+                        <h3>Conector de Carga<br>+ Instalação</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Elimina falha de carregamento</li>
+                            <li><i class="fas fa-check-circle"></i> Peça de Reposição nova</li>
+                            <li><i class="fas fa-check-circle"></i> Garantia documentada</li>
                         </ul>
-                        <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Cotar+preço+do+Conector"
-                            target="_blank"
-                            class="block w-full text-center bg-white border border-gray-200 py-3 rounded-xl font-semibold text-sm hover:border-brand-blue hover:text-brand-blue transition text-gray-700"
-                            data-cta="true">Cotar Conector</a>
+                        <a href="https://wa.me/5534997826161?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20a%20instala%C3%A7%C3%A3o%20de%20Conector%20de%20Carga."
+                            target="_blank" class="diag-cta-btn" data-cta="true">
+                            <i class="fab fa-whatsapp mr-1"></i> Cotar Conector
+                        </a>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="reveal card-product bg-gray-50 rounded-2xl group cursor-pointer h-full flex flex-col"
-                    style="transition-delay: 300ms;">
-                    <div class="h-56 bg-white flex items-center justify-center p-6 border-b border-gray-50">
-                        <img src="../assets/images/card_back_glass_part_1768420518256.webp" width="1024" height="1024"
-                            class="h-full object-contain">
+                <!-- Diag Card 4: Vidro Traseiro -->
+                <div class="reveal diag-card" style="transition-delay:240ms">
+                    <div class="diag-card-img-wrap">
+                        <img src="../assets/images/card_back_glass_part_1768420518256.webp"
+                            class="diag-card-img" width="1024" height="1024" alt="Substituição de Vidro Traseiro">
                     </div>
-                    <div class="p-6 flex-1 flex flex-col">
-                        <h3 class="font-bold text-lg mb-2 text-brand-text">Vidro Traseiro (Peça) <br>+ Instalação</h3>
-                        <ul class="text-sm text-gray-500 mb-6 space-y-2 flex-1">
-                            <li><i class="fas fa-check-circle text-brand-green mr-2"></i> Corte a laser preciso</li>
-                            <li><i class="fas fa-check-circle text-brand-green mr-2"></i> Restaura a estética</li>
+                    <div class="diag-card-body">
+                        <span class="diag-card-tag">Componente Traseiro</span>
+                        <h3>Vidro Traseiro<br>+ Instalação</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Corte a laser de precisão</li>
+                            <li><i class="fas fa-check-circle"></i> Restaura estética original</li>
+                            <li><i class="fas fa-check-circle"></i> Acabamento de fábrica</li>
                         </ul>
-                        <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Cotar+preço+do+Vidro+Traseiro"
-                            target="_blank"
-                            class="block w-full text-center bg-white border border-gray-200 py-3 rounded-xl font-semibold text-sm hover:border-brand-blue hover:text-brand-blue transition text-gray-700"
-                            data-cta="true">Cotar Traseira</a>
+                        <a href="https://wa.me/5534997826161?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20a%20instala%C3%A7%C3%A3o%20de%20Vidro%20Traseiro."
+                            target="_blank" class="diag-cta-btn" data-cta="true">
+                            <i class="fab fa-whatsapp mr-1"></i> Cotar Vidro Traseiro
+                        </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -601,9 +962,20 @@
         <div class="max-w-4xl mx-auto relative z-10">
             <div
                 class="reveal bg-white rounded-3xl p-8 sm:p-12 shadow-xl shadow-gray-200/50 border border-white flex flex-col md:flex-row items-center gap-12">
+                <!-- Before/After Slider (substitui imagem estática) -->
                 <div class="md:w-1/2">
-                    <img src="../assets/images/how_it_works_technician_1768420545480.webp" width="1024" height="1024"
-                        class="rounded-2xl shadow-lg w-full transform transition hover:scale-[1.02] duration-500">
+                    <p class="text-xs font-bold uppercase tracking-wider text-brand-blue mb-3">Antes &amp; Depois — Arraste</p>
+                    <div class="comparison-slider" id="compSlider">
+                        <!-- BEFORE: broken phone (placeholder gradient) -->
+                        <img class="img-before" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='800' height='600' fill='%23C0392B'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' font-family='Arial' font-size='52' fill='white' font-weight='900'%3E💔%3C/text%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' font-family='Arial' font-size='22' fill='rgba(255,255,255,0.85)'%3EComponente com falha%3C/text%3E%3C/svg%3E"
+                             alt="Antes - Componente com falha">
+                        <!-- AFTER: restored phone (placeholder gradient) -->
+                        <img class="img-after" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='800' height='600' fill='%230071E3'/%3E%3Ctext x='50%25' y='45%25' text-anchor='middle' font-family='Arial' font-size='52' fill='white' font-weight='900'%3E✅%3C/text%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' font-family='Arial' font-size='22' fill='rgba(255,255,255,0.85)'%3EHardware Recolocado%3C/text%3E%3C/svg%3E"
+                             alt="Depois - Hardware Recolocado">
+                        <div class="comparison-handle" id="compHandle"></div>
+                        <span class="comparison-label label-before">Antes</span>
+                        <span class="comparison-label label-after">Depois</span>
+                    </div>
                 </div>
                 <div class="md:w-1/2 space-y-8">
                     <h2 class="text-2xl font-bold text-brand-text">Como funciona o serviço</h2>
@@ -657,18 +1029,16 @@
                         necessária.
                     </p>
 
-                    <div class="space-y-6 py-6 border-t border-b border-gray-100">
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-brand-blue shrink-0">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <strong class="block text-brand-text mb-1">Endereço</strong>
-                                <span class="text-gray-500 text-sm">Av. Floriano Peixoto, 2673 - Bairro
-                                    Brasil<br>Uberlândia - MG, 38400-702</span>
-                            </div>
-                        </div>
+                    <!-- Address Highlight (SEO-first typography) -->
+                    <div class="address-highlight" itemscope itemtype="https://schema.org/LocalBusiness">
+                        <span class="addr-label"><i class="fas fa-map-marker-alt mr-1"></i> Laboratório Físico — Uberlândia MG</span>
+                        <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <strong itemprop="streetAddress">Av. Floriano Peixoto, 2673</strong> — Bairro Brasil<br>
+                            <span itemprop="addressLocality">Uberlândia</span> — <span itemprop="addressRegion">MG</span>, <span itemprop="postalCode">38400-702</span>
+                        </address>
+                    </div>
+
+                    <div class="space-y-4 pb-6 border-b border-gray-100">
                         <div class="flex items-start gap-4">
                             <div
                                 class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-brand-blue shrink-0">
@@ -1138,6 +1508,100 @@
                 });
             });
         });
+    </script>
+
+    <!-- ════════════════════════════════════════════
+         FAB: Floating WhatsApp Button
+    ════════════════════════════════════════════ -->
+    <a id="fabWa" href="https://wa.me/5534997826161?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20uma%20pe%C3%A7a%20com%20instala%C3%A7%C3%A3o."
+        target="_blank" class="fab-whatsapp" aria-label="Abrir WhatsApp" data-cta="true">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ════════════════════════════════════════════
+         Count-Up Animation + Slider + FAB Bounce
+    ════════════════════════════════════════════ -->
+    <script>
+    (function() {
+        'use strict';
+
+        // ── 1. COUNT-UP ANIMATION ──────────────────────────────────────
+        function animateCountUp(el) {
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            var suffix = el.getAttribute('data-suffix') || '';
+            var duration = 1800;
+            var start = null;
+            function step(ts) {
+                if (!start) start = ts;
+                var progress = Math.min((ts - start) / duration, 1);
+                // Ease out cubic
+                var eased = 1 - Math.pow(1 - progress, 3);
+                var current = Math.round(eased * target);
+                el.textContent = current.toLocaleString('pt-BR') + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        }
+
+        var animated = false;
+        var countUpObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && !animated) {
+                    animated = true;
+                    document.querySelectorAll('.count-up').forEach(function(el) {
+                        animateCountUp(el);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        var proofBar = document.querySelector('.social-proof-bar');
+        if (proofBar) countUpObserver.observe(proofBar);
+
+        // ── 2. BEFORE/AFTER COMPARISON SLIDER ─────────────────────────
+        var slider   = document.getElementById('compSlider');
+        var handle   = document.getElementById('compHandle');
+        var imgAfter = slider ? slider.querySelector('.img-after') : null;
+
+        if (slider && handle && imgAfter) {
+            var isDragging = false;
+
+            function setPosition(x) {
+                var rect = slider.getBoundingClientRect();
+                var pos  = Math.max(0, Math.min(x - rect.left, rect.width));
+                var pct  = (pos / rect.width) * 100;
+                imgAfter.style.clipPath  = 'inset(0 ' + (100 - pct) + '% 0 0)';
+                handle.style.left        = pct + '%';
+            }
+
+            // Mouse events
+            handle.addEventListener('mousedown', function(e) { isDragging = true; e.preventDefault(); });
+            window.addEventListener('mousemove', function(e) { if (isDragging) setPosition(e.clientX); });
+            window.addEventListener('mouseup',   function()  { isDragging = false; });
+
+            // Touch events
+            handle.addEventListener('touchstart', function(e) { isDragging = true; e.preventDefault(); }, { passive: false });
+            window.addEventListener('touchmove',  function(e) { if (isDragging) setPosition(e.touches[0].clientX); }, { passive: true });
+            window.addEventListener('touchend',   function()  { isDragging = false; });
+
+            // Click anywhere on slider
+            slider.addEventListener('click', function(e) { setPosition(e.clientX); });
+        }
+
+        // ── 3. FAB BOUNCE every 10 seconds ────────────────────────────
+        var fab = document.getElementById('fabWa');
+        if (fab) {
+            setInterval(function() {
+                fab.classList.add('bouncing');
+                setTimeout(function() { fab.classList.remove('bouncing'); }, 700);
+            }, 10000);
+            // First bounce after 4s
+            setTimeout(function() {
+                fab.classList.add('bouncing');
+                setTimeout(function() { fab.classList.remove('bouncing'); }, 700);
+            }, 4000);
+        }
+    })();
     </script>
 </body>
 
