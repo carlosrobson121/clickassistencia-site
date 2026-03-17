@@ -1813,6 +1813,16 @@
                 }
             }
         });
+
+        // Google Ads Conversion Tracking for WhatsApp Clicks
+        document.addEventListener('click', function(event) {
+            var target = event.target.closest('a');
+            if (target && (target.href.includes('wa.me') || target.href.includes('api.whatsapp.com'))) {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-11382610222/AzBECMj-oMwZEK6y07Mq'
+                });
+            }
+        });
     </script>
 </body>
 
