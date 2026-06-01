@@ -486,15 +486,20 @@
            HERO H1 Enhancement
         ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
         .hero-h1 {
-            font-size: clamp(2.4rem, 7vw, 5rem);
+            font-size: clamp(2.2rem, 7vw, 4.2rem);
             font-weight: 900;
-            line-height: 1.06;
-            letter-spacing: -0.04em;
-            background: linear-gradient(135deg, #0A0A0A 0%, #1D1D1F 50%, #0071E3 100%);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: #1D1D1F;
+            margin-bottom: 24px;
+        }
+
+        .hero-highlight {
+            background: linear-gradient(135deg, #0071E3 0%, #00C7FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 24px;
+            display: inline-block;
         }
 
         /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -816,19 +821,18 @@
             </div>
 
             <!-- Headline -->
-            <h1 class="reveal hero-h1">
-                Peças Premium com<br> Instalação Inclusa.
+            <h1 class="reveal hero-h1 max-w-3xl mx-auto">
+                Seu smartphone nas<br class="hidden sm:inline"> <span class="hero-highlight">mãos de especialistas.</span>
             </h1>
-            <p class="reveal text-lg md:text-xl text-brand-gray max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                Recupere a originalidade do seu aparelho. Vidros, telas e baterias instalados na hora em laboratório
-                próprio.
+            <p class="reveal text-base md:text-lg text-gray-700 max-w-xl mx-auto mb-10 leading-relaxed font-normal">
+                Segurança absoluta e precisão técnica. Nosso laboratório possui acesso restrito para proteger seus dados. Para a sua total garantia e transparência, todo o procedimento de instalação é registrado internamente em vídeo.
             </p>
 
             <!-- Main CTAs -->
             <div class="reveal flex flex-col sm:flex-row justify-center gap-4 mb-10">
                 <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Olá%2C+gostaria+de+saber+preço+e+disponibilidade+de+peças."
-                    class="btn-primary group" target="_blank" data-cta="true">
-                    <i class="fab fa-whatsapp text-lg"></i> Verificar Preço e Estoque
+                    class="btn-primary group" target="_blank" data-cta="true" data-modal-trigger="true" data-peca="Outros">
+                    <i class="fab fa-whatsapp text-lg"></i> Ver Preço Agora
                 </a>
                 <a href="#como-funciona" class="btn-outline" data-cta="true">Como funciona</a>
             </div>
@@ -889,9 +893,8 @@
                             <li><i class="fas fa-check-circle"></i> Acabamento industrial</li>
                             <li><i class="fas fa-check-circle"></i> Peça de Reposição nova</li>
                         </ul>
-                        <a href="https://wa.me/5534997826161?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20a%20instala%C3%A7%C3%A3o%20de%20Vidro%20Frontal."
-                            target="_blank" class="diag-cta-btn" data-cta="true">
-                            <i class="fab fa-whatsapp mr-1"></i> Cotar Vidro Frontal
+                        <a href="#" class="diag-cta-btn" data-cta="true" data-modal-trigger="true" data-peca="Tela/Vidro">
+                            Ver Preço Agora
                         </a>
                     </div>
                 </div>
@@ -910,9 +913,8 @@
                             <li><i class="fas fa-check-circle"></i> Saúde de bateria 100%</li>
                             <li><i class="fas fa-check-circle"></i> Célula de Reposição certificada</li>
                         </ul>
-                        <a href="https://wa.me/5534997826161?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20a%20instala%C3%A7%C3%A3o%20de%20Bateria."
-                            target="_blank" class="diag-cta-btn" data-cta="true">
-                            <i class="fab fa-whatsapp mr-1"></i> Cotar Bateria
+                        <a href="#" class="diag-cta-btn" data-cta="true" data-modal-trigger="true" data-peca="Bateria">
+                            Ver Preço Agora
                         </a>
                     </div>
                 </div>
@@ -931,9 +933,8 @@
                             <li><i class="fas fa-check-circle"></i> Peça de Reposição nova</li>
                             <li><i class="fas fa-check-circle"></i> Garantia documentada</li>
                         </ul>
-                        <a href="https://wa.me/5534997826161?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20a%20instala%C3%A7%C3%A3o%20de%20Conector%20de%20Carga."
-                            target="_blank" class="diag-cta-btn" data-cta="true">
-                            <i class="fab fa-whatsapp mr-1"></i> Cotar Conector
+                        <a href="#" class="diag-cta-btn" data-cta="true" data-modal-trigger="true" data-peca="Conector de Carga">
+                            Ver Preço Agora
                         </a>
                     </div>
                 </div>
@@ -952,13 +953,70 @@
                             <li><i class="fas fa-check-circle"></i> Restaura estética original</li>
                             <li><i class="fas fa-check-circle"></i> Acabamento de fábrica</li>
                         </ul>
-                        <a href="https://wa.me/5534997826161?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20a%20instala%C3%A7%C3%A3o%20de%20Vidro%20Traseiro."
-                            target="_blank" class="diag-cta-btn" data-cta="true">
-                            <i class="fab fa-whatsapp mr-1"></i> Cotar Vidro Traseiro
+                        <a href="#" class="diag-cta-btn" data-cta="true" data-modal-trigger="true" data-peca="Tela/Vidro">
+                            Ver Preço Agora
                         </a>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ════ Os 4 Pilares do Laboratório ════ -->
+    <section class="py-24 px-6 bg-brand-bg relative overflow-hidden border-t border-gray-100">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="reveal text-3xl font-extrabold mb-4 text-center text-brand-text tracking-tight">
+                Por que somos a escolha mais segura de Uberlândia
+            </h2>
+            <p class="reveal text-center text-gray-500 text-sm mb-16 max-w-xl mx-auto leading-relaxed">
+                Segurança de dados blindada, peças de alta durabilidade e processos monitorados para você ter tranquilidade absoluta.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Pilar 1: Garantia -->
+                <div class="reveal bg-white rounded-2xl p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,113,227,0.06)] hover:border-brand-blue/15 flex flex-col items-center text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-blue flex items-center justify-center mb-6 text-2xl transition-transform duration-300 hover:scale-110">
+                        <i class="fa-solid fa-file-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-text mb-3 tracking-tight">Garantia Formal Documentada</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">
+                        Não fazemos acordos de boca. Você recebe um certificado de garantia por escrito após a instalação, assegurando tranquilidade total.
+                    </p>
+                </div>
+
+                <!-- Pilar 2: Agilidade -->
+                <div class="reveal bg-white rounded-2xl p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,113,227,0.06)] hover:border-brand-blue/15 flex flex-col items-center text-center" style="transition-delay:80ms">
+                    <div class="w-14 h-14 rounded-2xl bg-green-50 text-brand-green flex items-center justify-center mb-6 text-2xl transition-transform duration-300 hover:scale-110">
+                        <i class="fa-solid fa-bolt-lightning"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-text mb-3 tracking-tight">Agilidade de Laboratório</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">
+                        Processos técnicos otimizados para substituir sua tela ou bateria no mesmo dia. Resolvemos o problema de forma definitiva.
+                    </p>
+                </div>
+
+                <!-- Pilar 3: Hardware Original -->
+                <div class="reveal bg-white rounded-2xl p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,113,227,0.06)] hover:border-brand-blue/15 flex flex-col items-center text-center" style="transition-delay:160ms">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-brand-blue flex items-center justify-center mb-6 text-2xl transition-transform duration-300 hover:scale-110">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-text mb-3 tracking-tight">Hardware de Padrão Original</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">
+                        Componentes de alta durabilidade que restauram as configurações de fábrica do seu aparelho, sem cobrar preços absurdos.
+                    </p>
+                </div>
+
+                <!-- Pilar 4: Transparência -->
+                <div class="reveal bg-white rounded-2xl p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,113,227,0.06)] hover:border-brand-blue/15 flex flex-col items-center text-center" style="transition-delay:240ms">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-50 text-amber-500 flex items-center justify-center mb-6 text-2xl transition-transform duration-300 hover:scale-110">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-text mb-3 tracking-tight">Transparência Direta no Valor</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">
+                        Sem orçamentos no escuro. Você descobre o valor exato da peça com a instalação inclusa na hora.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -1014,9 +1072,9 @@
                         </div>
                     </div>
 
-                    <a href="https://api.whatsapp.com/send?phone=5534997826161"
-                        class="btn-primary w-full justify-center mt-4" data-cta="true">
-                        <i class="fab fa-whatsapp"></i> Verificar Agora no WhatsApp
+                    <a href="#"
+                        class="btn-primary w-full justify-center mt-4" data-cta="true" data-modal-trigger="true" data-peca="Outros">
+                        <i class="fab fa-whatsapp"></i> Ver Preço Agora
                     </a>
                 </div>
             </div>
@@ -1730,8 +1788,99 @@
                 setTimeout(function() { fab.classList.remove('bouncing'); }, 700);
             }, 4000);
         }
-    })();
     </script>
+
+    <!-- ════ Modal de Captura de Leads (CRO) ════ -->
+    <div id="leadModal" class="fixed inset-0 bg-black/60 z-[110] hidden items-center justify-center p-4 backdrop-blur-md transition-opacity duration-300 opacity-0 pointer-events-none flex">
+        <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl relative transform scale-95 transition-transform duration-300 overflow-hidden border border-white">
+            <!-- Modal Header Accent Line -->
+            <div class="h-1.5 w-full bg-gradient-to-r from-brand-blue to-emerald-500"></div>
+
+            <!-- Botão Fechar -->
+            <button id="closeLeadModalBtn" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-800 transition-colors z-10">
+                <i class="fas fa-times text-lg"></i>
+            </button>
+
+            <div class="p-8">
+                <!-- Ícone e Títulos -->
+                <div class="text-center mb-6">
+                    <div class="inline-flex w-12 h-12 rounded-full bg-blue-50 text-brand-blue items-center justify-center mb-4 text-xl">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-brand-text leading-tight mb-2 tracking-tight">
+                        Descubra o valor da peça com instalação na hora.
+                    </h3>
+                    <p class="text-sm text-gray-500 leading-relaxed font-light">
+                        Preencha os dados abaixo para liberarmos a tabela de valores do seu aparelho imediatamente.
+                    </p>
+                </div>
+
+                <!-- Formulário -->
+                <form id="leadForm" class="space-y-4">
+                    <!-- Campo 1: Modelo -->
+                    <div>
+                        <label for="deviceModel" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                            Qual o modelo do aparelho? *
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </span>
+                            <input type="text" id="deviceModel" required
+                                class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm placeholder-gray-400 text-brand-text focus:outline-none focus:border-brand-blue focus:bg-white transition-all font-medium"
+                                placeholder="Ex: iPhone 13, Galaxy A35...">
+                        </div>
+                    </div>
+
+                    <!-- Campo 2: Peça -->
+                    <div>
+                        <label for="devicePart" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                            Qual peça você precisa? *
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </span>
+                            <select id="devicePart" required
+                                class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm text-brand-text focus:outline-none focus:border-brand-blue focus:bg-white transition-all font-medium appearance-none cursor-pointer">
+                                <option value="" disabled selected>Selecione uma opção...</option>
+                                <option value="Tela/Vidro">Tela/Vidro</option>
+                                <option value="Bateria">Bateria</option>
+                                <option value="Conector de Carga">Conector de Carga</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                            <span class="absolute inset-y-0 right-0 flex items-center pr-3.5 text-gray-400 pointer-events-none">
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Campo 3: WhatsApp -->
+                    <div>
+                        <label for="userPhone" class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1.5">
+                            Seu WhatsApp com DDD *
+                        </label>
+                        <div class="relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-gray-400">
+                                <i class="fa-brands fa-whatsapp font-bold"></i>
+                            </span>
+                            <input type="tel" id="userPhone" required pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+                                class="w-full pl-10 pr-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm placeholder-gray-400 text-brand-text focus:outline-none focus:border-brand-blue focus:bg-white transition-all font-medium"
+                                placeholder="(34) 99999-9999">
+                        </div>
+                    </div>
+
+                    <!-- Botão de Envio -->
+                    <button type="submit" id="submitLeadBtn"
+                        class="w-full mt-6 bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.99] text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2.5 shadow-lg shadow-green-500/15 transition-all text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span id="submitBtnText">Liberar Meu Orçamento no WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Legal Modals -->
     <div id="legalModal" class="fixed inset-0 bg-black/60 z-[100] hidden items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none flex">
         <div class="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative transform scale-95 transition-transform duration-300">
@@ -1829,6 +1978,182 @@
                 });
             }
         });
+    </script>
+
+    <!-- ════ Controle do Modal de Leads ════ -->
+    <script>
+        (function() {
+            const modal = document.getElementById('leadModal');
+            const form = document.getElementById('leadForm');
+            const closeBtn = document.getElementById('closeLeadModalBtn');
+            const phoneInput = document.getElementById('userPhone');
+            const devicePartSelect = document.getElementById('devicePart');
+            const deviceModelInput = document.getElementById('deviceModel');
+            const submitBtn = document.getElementById('submitLeadBtn');
+            const submitBtnText = document.getElementById('submitBtnText');
+
+            // URL do Google Apps Script (Webhook)
+            // Cole aqui a URL gerada após publicar o seu script do Google Sheets
+            const SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwdoQmtH7Y2En-gWnLGHgUMjnYmeGxogemWUlAvXDwmO-TN6vNycvQWWQ8FVG6PQ06s/exec';
+
+            // 1. Abrir Modal com Animação
+            function openLeadModal(defaultPart = '') {
+                document.body.style.overflow = 'hidden';
+
+                if (defaultPart) {
+                    devicePartSelect.value = defaultPart;
+                } else {
+                    devicePartSelect.value = "";
+                }
+
+                modal.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0', 'pointer-events-none');
+                    modal.querySelector('.bg-white').classList.remove('scale-95');
+                    modal.querySelector('.bg-white').classList.add('scale-100');
+                }, 10);
+            }
+
+            // 2. Fechar Modal com Animação
+            function closeLeadModal() {
+                document.body.style.overflow = '';
+                
+                modal.classList.add('opacity-0', 'pointer-events-none');
+                modal.querySelector('.bg-white').classList.remove('scale-100');
+                modal.querySelector('.bg-white').classList.add('scale-95');
+
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    form.reset();
+                }, 300);
+            }
+
+            // Eventos de Fechamento
+            closeBtn.addEventListener('click', closeLeadModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) closeLeadModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeLeadModal();
+                }
+            });
+
+            // 3. Interceptar todos os botões configurados com o trigger
+            document.querySelectorAll('[data-modal-trigger="true"]').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const peca = this.getAttribute('data-peca') || '';
+                    openLeadModal(peca);
+                });
+            });
+
+            // 4. Bloqueio Global e Intercepção de qualquer link do WhatsApp na página
+            document.addEventListener('click', function(e) {
+                const target = e.target.closest('a');
+                if (target) {
+                    const href = target.getAttribute('href') || '';
+                    if ((href.includes('wa.me') || href.includes('api.whatsapp.com')) && 
+                        !target.hasAttribute('data-modal-trigger') && 
+                        target.id !== 'submitLeadBtn') {
+                        
+                        e.preventDefault();
+                        let pecaDetectada = 'Outros';
+                        const textParam = decodeURIComponent(href.split('text=')[1] || '').toLowerCase();
+                        if (textParam.includes('tela') || textParam.includes('vidro')) {
+                            pecaDetectada = 'Tela/Vidro';
+                        } else if (textParam.includes('bateria')) {
+                            pecaDetectada = 'Bateria';
+                        } else if (textParam.includes('conector')) {
+                            pecaDetectada = 'Conector de Carga';
+                        }
+
+                        openLeadModal(pecaDetectada);
+                    }
+                }
+            });
+
+            // 5. Máscara Inteligente de Telefone
+            phoneInput.addEventListener('input', function(e) {
+                let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+                e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+            });
+
+            // 6. Submissão do Formulário e Redirecionamento
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const modelValue = deviceModelInput.value.trim();
+                const partValue = devicePartSelect.value;
+                const phoneValue = phoneInput.value.trim();
+
+                submitBtn.disabled = true;
+                submitBtnText.textContent = 'Gerando Orçamento & Redirecionando...';
+                submitBtn.style.opacity = '0.8';
+
+                const formattedMessage = `Olá, acabei de solicitar no site o valor para a troca de ${partValue} do aparelho ${modelValue}. Podem me enviar o orçamento?`;
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=5534997826161&text=${encodeURIComponent(formattedMessage)}`;
+
+                let redirected = false;
+                const doRedirect = () => {
+                    if (!redirected) {
+                        redirected = true;
+                        
+                        if (typeof gtag === 'function') {
+                            gtag('event', 'conversion', {
+                                'send_to': 'AW-11382610222/AzBECMj-oMwZEK6y07Mq'
+                            });
+                        }
+
+                        window.open(whatsappUrl, '_blank');
+                        
+                        setTimeout(() => {
+                            closeLeadModal();
+                            submitBtn.disabled = false;
+                            submitBtnText.textContent = 'Liberar Meu Orçamento no WhatsApp';
+                            submitBtn.style.opacity = '1';
+                        }, 500);
+                    }
+                };
+
+                // Timeout preventivo de resiliência estendida para rede instável (4 segundos)
+                const timeoutId = setTimeout(() => {
+                    console.warn("Sheets webhook timeout fallback. Redirecting client.");
+                    doRedirect();
+                }, 4000);
+
+                if (SHEETS_WEBHOOK_URL && SHEETS_WEBHOOK_URL.trim() !== '') {
+                    fetch(SHEETS_WEBHOOK_URL, {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            modelo: modelValue,
+                            peca: partValue,
+                            whatsapp: phoneValue
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.result === 'success') {
+                            clearTimeout(timeoutId);
+                            doRedirect();
+                        } else {
+                            console.error("Sheets webhook failed with response:", data);
+                            clearTimeout(timeoutId);
+                            doRedirect(); // Fallback de resiliência comercial
+                        }
+                    })
+                    .catch(err => {
+                        console.error("Sheets webhook error:", err);
+                        clearTimeout(timeoutId);
+                        doRedirect(); // Fallback de resiliência comercial
+                    });
+                } else {
+                    clearTimeout(timeoutId);
+                    doRedirect();
+                }
+            });
+        })();
     </script>
 </body>
 
