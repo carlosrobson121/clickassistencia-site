@@ -1731,19 +1731,36 @@
         }
 
         var animated = false;
+        function triggerAllCounts() {
+            if (!animated) {
+                animated = true;
+                document.querySelectorAll('.count-up').forEach(function(el) {
+                    animateCountUp(el);
+                });
+            }
+        }
+
         var countUpObserver = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
-                if (entry.isIntersecting && !animated) {
-                    animated = true;
-                    document.querySelectorAll('.count-up').forEach(function(el) {
-                        animateCountUp(el);
-                    });
+                if (entry.isIntersecting) {
+                    triggerAllCounts();
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.05 });
 
         var proofBar = document.querySelector('.social-proof-bar');
-        if (proofBar) countUpObserver.observe(proofBar);
+        if (proofBar) {
+            countUpObserver.observe(proofBar);
+            
+            // Fallback de segurança: se a barra estiver na dobra principal e não disparou após carregar, dispara manualmente
+            if (document.readyState === 'complete') {
+                setTimeout(triggerAllCounts, 1200);
+            } else {
+                window.addEventListener('load', function() {
+                    setTimeout(triggerAllCounts, 1200);
+                });
+            }
+        }
 
         // ── 2. BEFORE/AFTER COMPARISON SLIDER ─────────────────────────
         var slider   = document.getElementById('compSlider');
@@ -1876,6 +1893,10 @@
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span id="submitBtnText">Liberar Meu Orçamento no WhatsApp</span>
                     </button>
+                    <!-- Micro-texto de Consentimento LGPD -->
+                    <p class="text-[10px] text-gray-400 text-center mt-3 font-normal">
+                        Usado exclusivamente para enviar o seu orçamento.
+                    </p>
                 </form>
             </div>
         </div>
