@@ -1418,9 +1418,8 @@
                         class="fa-solid fa-file-contract"></i> Garantia por escrito
                 </div>
 
-                <a href="https://api.whatsapp.com/send?phone=5534997826161&text=Ol%C3%A1%2C%20estava%20no%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20r%C3%A1pido."
-                    target="_blank" class="modal-cta-primary" onclick="trackConversion()">
-                    Quero cotar agora
+                <a href="#" class="modal-cta-primary" data-modal-trigger="true" data-peca="Outros" onclick="closeModal('continue'); trackConversion();">
+                    Ver Preço Agora
                 </a>
 
                 <button class="modal-cta-secondary" onclick="closeModal('continue')">
@@ -1428,7 +1427,7 @@
                 </button>
 
                 <div class="leave-option">
-                    <a href="javascript:history.back()" class="leave-link">Sair mesmo assim</a>
+                    <a href="#" class="leave-link" onclick="closeModal('continue'); event.preventDefault();">Sair mesmo assim</a>
                 </div>
             </div>
         </div>
